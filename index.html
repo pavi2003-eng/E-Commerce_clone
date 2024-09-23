@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>E-Commerce-Website</title>
+    <link href="image/logo.png" rel="icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  </head>
+  <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-1" href="#">TrendCart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-6" id="navbarNav">
+          <ul class="navbar-nav ul">
+            <li class="nav-item">
+              <a class="nav-link active li fw-bold" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Contact US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#"><i class="fa-regular fa-user"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <img src="css/couch.png" class="img" data-aos="fade-up-left"  data-aos-duration="1500" alt="image"/>
+    <form method="GET" action="productdtail.html" data-aos="fade-up-right"  data-aos-duration="1500" style="background: rgb(255 255 255 / 13%); border: 2px solid rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);">
+      <div class="input-group flex-nowrap container mt-5">
+        <span class="input-group-text" id="addon-wrapping">File<span style="color: red;">*</span>
+        <input type="file" class="form-control" id="productimage" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" onchange="imageinfo(event)">
+        <input type="hidden" id="imagecontrol" value="false"/>
+      </div>
+      <img src="image/images.png" alt="Product-Image" id="preview"/>
+      <span id="errormessage"></span>
+      <div class="input-group flex-nowrap container mt-5">
+        <span class="input-group-text" id="addon-wrapping">Product name<span style="color: red;">*</span></span>
+        <input type="text" class="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="addon-wrapping" id="name" required>
+      </div>
+      <span id="productnameerror1"></span>
+
+      <div class="input-group flex-nowrap container mt-5">
+        <span class="input-group-text" id="addon-wrapping">Cost <span style="color: red;">*</span></span>
+        <input type="number" class="form-control" placeholder="Cost" aria-label="Username" aria-describedby="addon-wrapping" id="cost">
+      </div>
+      <span id="costerror"></span>
+
+      <div class="input-group flex-nowrap container mt-5">
+        <span class="input-group-text" id="addon-wrapping">Description<span style="color: red;">*</span></span>
+        <textarea id="description"></textarea>
+      </div>
+      <span id="descriptionerror1"></span>
+      <div class="container mt-5">
+        <input type="button" class="submit" id="submit" value="Submit" onclick="validate()">
+      </div>
+    </form>
+    <script>
+      function validate()
+      {
+        let name=document.getElementById("name").value;
+        let productname=name.trim();
+        let detail=document.getElementById("description").value;
+        let cost=document.getElementById("cost").value;
+        let productimage=document.getElementById("productimage").value;
+        localStorage.setItem("Productimage",JSON.stringify(productimage))
+        localStorage.setItem("Productname",productname)
+        localStorage.setItem("Description",detail)
+        localStorage.setItem("Price",cost)
+        var imagevalidate=document.getElementById("imagecontrol").value;
+      if(imagevalidate=="false")
+      {
+        document.getElementById("errormessage").textContent="Please select image file"
+      }
+      if(productname)
+      {
+        if(productname.length<4)
+      {
+          document.getElementById("productnameerror1").textContent="Product name must have atleast 3 character"
+      }
+      }
+      else
+      {
+          document.getElementById("productnameerror1").textContent="Plese select image file"
+      }
+      if(detail)
+      {
+        if(detail.length>255)
+      {
+          document.getElementById("descriptionerror1").textContent="Description contains only below 255 character"
+      }
+      if(detail.length<10)
+      {
+          document.getElementById("descriptionerror1").textContent="Description name must have atleast 10 character"
+      }
+      }
+      else
+      {
+          document.getElementById("descriptionerror1").textContent="Description is required"
+      }
+      if(!cost)
+      {
+        document.getElementById("costerror").textContent="cost is required"
+      }
+      if(productname && cost && detail && imagevalidate=="true")
+      {
+        console.log(productname,cost,detail,imagevalidate);
+        window.location.href="producdtail.html";
+      }
+      }
+      function imageinfo()
+      {
+        var extension=event.target.files[0].type.split("/")[0];
+      if(extension=="image")
+      {
+        document.getElementById("imagecontrol").value="true"
+        var preview=document.getElementById("preview");
+        preview.src=URL.createObjectURL(event.target.files[0]);
+        preview.onload=function(){
+          URL.revokeObjectURL(preview.src)
+        }
+        var fileinput=document.getElementById("productimage");
+          if(fileinput.files.length>0)
+          {
+            var file=fileinput.files[0];
+            var reader=new FileReader();
+            reader.onload=function(event)
+            {
+              localStorage.setItem("imagesource",event.target.result);
+            };
+            reader.readAsDataURL(file)
+          }
+      }
+      else
+      {
+        document.getElementById("errormessage").textContent="Please select image file"
+      }
+      }
+    </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>      
+  </body>
+</html>

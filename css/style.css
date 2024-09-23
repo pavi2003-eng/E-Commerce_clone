@@ -1,0 +1,354 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    
+}
+body
+{
+     background: linear-gradient(90deg, #9C27B0 0%, #2196F3 35%, #9C27B0 100%);
+     height: 1px;
+}
+.navbar-expand-lg
+{
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+}
+.thankyou
+{
+    font-size: 170px;
+}
+form
+{
+    background: #03A9F4;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    margin-top: 49px;
+    margin-right: 400px;
+    height: 510px;
+    position: absolute;
+    top: 110px;
+    width: 700px;
+    margin-left: 60px;
+}
+.inc-des-buttton
+{
+    all: unset;
+}
+.coupon
+{
+    background: #03A9F4;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    margin-left: 490px;
+    margin-top: 1142px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 590px;
+    height: 190px;
+    padding: 10px;
+    border-radius: 20px;
+    background: #e6e6fa82;
+    border-radius: 20px;
+}
+.cancelbutton
+{
+    all: unset;
+    border: 1px solid;
+    text-align: center;
+    padding-right: 14px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    background:  from right to left(green, gray);
+}
+.form
+{
+    background: rgb(255 255 255 / 13%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    margin-top: 49px;
+    margin-right: 440px;
+    height: 940px;
+    position: absolute;
+    top: 110px;
+    width: 590px;
+    margin-left: 490px;
+    text-align: left;
+    padding-left: 124px;
+    background: #e6e6fa82;
+    border-radius: 20px;
+}
+.orderform
+{
+    background: rgb(255 255 255 / 13%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    margin-top: 49px;
+    margin-right: 440px;
+    height: 400px;
+    position: absolute;
+    top: 110px;
+    width: 590px;
+    margin-left: 490px;
+    text-align: left;
+    padding-left: 124px;
+    background: #e6e6fa82;
+    border-radius: 20px;
+}
+.img
+{
+    position: absolute;
+    right: 50px;
+    top: 160px;
+    box-shadow: 0 0 40px rgb(5 5 5 / 60%);
+    height: 475px;
+    display: block;
+}
+.submit
+{
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.555);
+        color: black;
+        padding: 6px;
+        width: 100px;
+}
+.gif
+{
+    display: none;
+    position: absolute;
+    height: 400px;
+    left: 420px;
+    top: 1030px;
+}
+.orderimage{
+    display: none;
+}
+.ul
+{
+    margin-left: 160px;
+}
+.li
+{
+    margin-left: 50px;
+}
+#image
+{
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    border-radius: 20px;
+    width: 380px;
+    height: 290px;
+}
+#couponerror1
+{
+    position: absolute;
+    text-align: center;
+    left: 680px;
+    top: 1383px;
+    color: red;
+}
+.proceed
+{
+    background: #9c27b014;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgb(5 5 5 / 23%);
+    width: 230px;
+    height: 50px;
+    position: absolute;
+    left: 180px;
+    border-radius: 15px;
+}
+.backbutton
+{
+    all: unset;
+    background: #9c27b014;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgb(5 5 5 / 23%);
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    left: 620px;
+    top: 510px;
+    width: 260px;
+    border-radius: 20px;
+}
+#preview
+{
+    position: absolute;
+    top: 277px;
+    left: 438px;
+    height: 230px;
+    width: 260px;
+}
+#stock
+{
+    color: red;
+    display: none;
+    position: absolute;
+    top: 710px;
+}
+#errormessage
+{
+    margin-top: 3px;
+    margin-left: 11px;
+    color: #ff0000;
+    position: absolute;
+}
+#costerror
+{
+    margin-top: 3px;
+    margin-left: 11px;
+    color: #ff0000;
+    position: absolute;
+}
+#stockerror
+{
+    margin-top: 3px;
+    margin-left: 11px;
+    color: #ff0000;
+    display: none;
+    position: absolute;
+}
+#productnameerror1
+{
+    margin-top: 3px;
+    margin-left: 11px;
+    color: #ff0000;
+    /* display: none; */
+    position: absolute;
+}
+#descriptionerror1
+{
+    margin-top: 3px;
+    margin-left: 11px;
+    color: #ff0000;
+    position: absolute;
+}
+@media screen and (min-width:300px) and (max-width:600px) 
+{
+    body {
+        background: linear-gradient(90deg, #9c27b0cc 0%, #2196F3 35%, #2196F3 100%);
+        height: 1px;
+    }
+    form
+    { 
+        all: unset;
+    }
+    .form
+    { 
+        all: unset;
+    }
+    .orderform{
+        all: unset;
+    }
+    .submit
+    {
+        position: absolute;
+        left: 160px;
+        background: rgb(201, 201, 239);
+        border: 1px solid rgba(0, 0, 0, 0.555);
+        color: black;
+        padding: 6px;
+        width: 100px;
+    }
+    #submit
+    {
+        position: absolute;
+        top: 690px;
+        left: 144px;
+    }
+    #preview
+    {
+        position: absolute;
+        top: 480px;
+        left: 20px;
+        height: 200px;
+    }
+    .img
+    {
+        display: none;
+    }
+    .coupon
+    {
+        all: unset;
+        margin-top: 101px !important;
+        margin-bottom: 20px !important;
+        text-align: left !important;
+        /* margin-left: 10px !important; */
+        width: 388px;
+        background: #03a9f436;
+        display: inline-block;
+        border: 1px solid blueviolet;
+        padding-bottom: 20px;
+        position: absolute;
+        padding-left: 10px;
+    }
+    .proceed {
+        background: #9c27b014;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgb(5 5 5 / 23%);
+        width: 230px;
+        height: 50px;
+        position: absolute;
+        left: 40px;
+        border-radius: 15px;
+    }
+    .orderbody
+    {
+        width: 380px;
+    }
+    .gif
+    {
+        display: none;
+        position: absolute;
+        height: 120px;
+        left: 0;
+        top: 0px;
+    }
+    .orderimage{
+        display: block;
+        height: 220px;
+        position: absolute;
+        top: 370px;
+        filter: opacity(0.8);
+        width: 400px;
+
+    }
+    .thankyou {
+        font-size: 70px;
+    }
+    .thankyoubody
+    {
+    width: 400px;   
+    }
+    .backbutton
+    {
+        all: unset;
+        background: #9c27b014;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgb(5 5 5 / 23%);
+        color: black;
+        font-size: 25px;
+        position: absolute;
+        left: 100px;
+        top: 520px;
+        width: 200px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    #image
+    {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    border-radius: 20px;
+    width: 380px;
+    height: 290px;
+    }
+    #descriptionerror1
+    {
+        margin-top: 0;
+    }
+}

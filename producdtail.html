@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>E-Commerce-Website</title>
+    <link href="image/logo.png" rel="icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-1" href="#">TrendCart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-6" id="navbarNav">
+          <ul class="navbar-nav ul">
+            <li class="nav-item">
+              <a class="nav-link active li fw-bold" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#">Contact US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#"><i class="fa-regular fa-user"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link li fw-bold" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="form" data-aos="fade-down-right" data-aos-duration="1500">
+      <div class="container mt-5">
+        <div class="row row-cols-1">
+          <div class="col ">
+            <img src="" alt="Product-Image" id="image"/>
+          </div>
+          <div class="col  mt-5">
+            <label class="fs-3 fw-bold">Product Name:</label>
+            <span id="name" class="text-center fs-4 ms-3"></span>
+          </div>
+          <div class="col mt-5">
+            <label class="fs-3 fw-bold">Product Price:</label>
+            <span id="price" class="text-center fs-4 ms-3"></span>
+          </div>
+          <div class="col mt-5">
+            <label class="fs-3 fw-bold">Description:</label>
+            <span id="des" class="text-center fs-4 ms-3"></span>
+          </div>
+          <div class="col mt-5">
+            <label class="fs-3 fw-bold">Product Quantity:</label>
+            <input type="button" value="-" onclick="decrease()" class="d-inline fs-2 fw-bold ms-3 inc-des-buttton">
+            <p id="count" class="d-inline fs-3 p-3">1</p>
+            <input type="button" value="+" onclick="increase()" class="d-inline fs-2 fw-bold inc-des-buttton">
+          </div>
+          <span id="stock">Reached Minimum Stock</span>
+          <div class="col mt-5">
+            <label class="fs-2 fw-bold">Product cancel:</label>
+            <a href="addproduct.html" class=" d-inline cancelbutton"><input class="inc-des-buttton fs-4 ms-3" type="button" value="Cancel"></a>
+          </div>
+          <div class="container mt-5 text-center">
+            <input type="button" class="proceed" value="Proceed to Checkout" onclick="validate()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="coupon mw-100" >
+    <img src="image/celebrate.gif" class="gif" id="gif"/>
+      <h1>Coupon</h1>
+      <p class="fs-5">Enter your coupon code if you have one.</p>
+      <input type="text" id="coupon" class="mt-1">
+      <input type="button" value="Apply coupon" onclick="coupon()" id="mybutton">
+      <span id="couponerror1"></span>
+    </div>
+    <script>
+      function validate()
+      {
+        window.location.href="orderdetail.html";
+      }
+      let image=localStorage.getItem("imagesource");
+      document.getElementById("image").textContent=image;
+      let name=localStorage.getItem('Productname');
+      document.getElementById("name").textContent=name;
+      let price=localStorage.getItem('Price');
+      let price_format="$"+price+".00"
+      document.getElementById("price").textContent=price_format;
+      let description=localStorage.getItem('Description');
+      let min_des=description.slice(0,10)+"...";
+      document.getElementById("des").textContent=min_des;
+      if(image)
+      {
+        document.getElementById("image").src=image;
+      }
+      function increase()
+      {
+        let fixed=document.getElementById("count").innerHTML;
+        let increment=1
+        let currentvalue=parseInt(fixed);
+        let inc=parseInt(increment);
+        let changed=currentvalue+inc;
+        document.getElementById("count").innerText=changed;
+        const price=parseInt(localStorage.getItem("Price"));
+        let changed_price=changed*price;
+        document.getElementById("price").innerText="$"+changed_price+".00";
+        localStorage.setItem("totalprice",changed_price)
+        localStorage.setItem("Increment/Decrement",changed)
+      }
+      function decrease()
+      { 
+        let value=document.getElementById("count").innerHTML;
+        let inc=1
+      if(value==1)
+      {
+        document.getElementById("stock").style="display:block;"
+      }
+      else
+      {
+        let currentvalue=parseInt(value);
+        let dec=parseInt(inc)
+        let changed=currentvalue-dec;
+        document.getElementById("count").innerText=changed;
+        const price=parseInt(localStorage.getItem("Price"));
+        let changed_price=changed*price;
+        document.getElementById("price").innerText="$"+changed_price+".00";
+        localStorage.setItem("totalprice",changed_price)
+        localStorage.setItem("Increment/Decrement",changed)
+      }
+    }
+    function coupon()
+      {
+        let coupon_value=document.getElementById("coupon").value;
+        let current_amount=document.getElementById("price").innerHTML;
+        let sliced_price=current_amount.slice(0,-3);
+        let correct_price=sliced_price.slice(1)
+        let total_amount=parseInt(correct_price)
+        if(coupon_value=="APJ50")
+      {
+        document.getElementById("gif").style="display:block;"
+        let a=parseInt(50);
+        let b=parseInt(100)
+        let c=a/b;
+        let after_discount=total_amount*c;
+        document.getElementById("price").innerText="$"+after_discount+".00";
+        localStorage.setItem("afterdiscount",after_discount)
+        document.getElementById('mybutton').disabled = true;
+      }
+      else
+      {
+          if(coupon_value.length==0)
+        {
+          document.getElementById("couponerror1").textContent="Please enter a coupon code";
+        }
+        else
+        {
+          document.getElementById("couponerror1").textContent="Invalid coupon code";
+        }
+      }
+
+      }
+    </script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>      
+  </body>
+</html>

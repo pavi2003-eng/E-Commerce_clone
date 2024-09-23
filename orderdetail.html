@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <title>E-Commerce-Website</title>
+        <link href="image/logo.png" rel="icon"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+      </head>
+    <body class="orderbody">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand fw-bold fs-1" href="#">TrendCart</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse ms-6" id="navbarNav">
+                <ul class="navbar-nav ul">
+                  <li class="nav-item">
+                    <a class="nav-link active li fw-bold" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Contact US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#"><i class="fa-regular fa-user"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <form class="pt-4 ps-5 orderform">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label id="item" class="ps-3 fw-bold"></label>
+                    </div>
+                    <div class="col text-center">
+                        <label id="amount"></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label id="item1" class="ps-3 fw-bold "></label>
+                    </div>
+                    <div class="col text-center">
+                        <label id="amount1"></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <label  class="ps-3 fw-bold">Discount Amount</label>
+                    </div>
+                    <div class="col text-center">
+                        <label id="amount2"></label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div class="row">
+                    <div class="col ">
+                        <label class="fw-bold ps-3 ">Total Amount</label>
+                    </div>
+                    <div class="col text-center">
+                        <label id="amount3" class="fw-bold"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5 text-center">
+                <input type="button" class="proceed" value="Place Order" onclick="validate()">
+              </div>
+        </form>
+        <img src="image/order.gif" class="orderimage"/>
+        <script>
+            function validate()
+            {
+                window.location.href="thankyou.html"
+            }
+            let Productname=localStorage.getItem("Productname");
+            let cost=localStorage.getItem("Price");
+            let Productname1=localStorage.getItem("Productname");
+            let totalcost=localStorage.getItem("totalprice");
+            let count=localStorage.getItem("Increment/Decrement");
+            let Discount=localStorage.getItem("afterdiscount");
+            document.getElementById("item").textContent=Productname+" * 1";
+            document.getElementById("amount").innerHTML="$"+cost+".00";
+            document.getElementById("item1").textContent=Productname1+" * "+count;
+            document.getElementById("amount1").innerHTML="$"+totalcost+".00";
+            document.getElementById("amount2").innerHTML="$"+Discount+".00";
+            let Afterdiscount=localStorage.getItem("afterdiscount");
+            document.getElementById("amount3").innerHTML="$"+Afterdiscount+".00";
+            if(Discount==null)
+            {
+              document.getElementById("amount2").innerHTML="$0.00";
+              let totalcost=localStorage.getItem("totalprice");
+              document.getElementById("amount3").innerHTML="$"+totalcost+".00";
+            }
+        </script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>   
+    </body>   
+</html>

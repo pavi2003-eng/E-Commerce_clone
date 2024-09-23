@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <title>E-Commerce-Website</title>
+        <link href="image/logo.png" rel="icon"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+      </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand fw-bold fs-1" href="#">TrendCart</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse ms-6" id="navbarNav">
+                <ul class="navbar-nav ul">
+                  <li class="nav-item">
+                    <a class="nav-link active li fw-bold" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Shop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#">Contact US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#"><i class="fa-regular fa-user"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link li fw-bold" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <h1 class="fw-bold text-center mt-5 thankyou">Thank You!</h1>
+        <h5 class="text-center mt-5">You order was successfuly completed.</h5>
+        <img src="image/celebrate.gif" style="height: 380px;"/>
+        <div class="container mt-5 text-center">
+          <center>
+            <input type="button" class="backbutton" value="Back to Home" onclick="validate()">
+          </center>
+        </div>
+        <script>
+          function validate()
+          {
+            window.location.href="index.html"
+          }
+        </script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>      
+  </body>
+</html>
