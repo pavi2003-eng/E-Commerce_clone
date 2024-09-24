@@ -82,7 +82,8 @@ box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);">
       {
         let name=document.getElementById("name").value;
         let productname=name.trim();
-        let detail=document.getElementById("description").value;
+        let det=document.getElementById("description").value;
+        let detail=det.trim();
         let cost=document.getElementById("cost").value;
         let productimage=document.getElementById("productimage").value;
         localStorage.setItem("Productimage",JSON.stringify(productimage))
