@@ -118,6 +118,12 @@
               let totalcost=localStorage.getItem("totalprice");
               document.getElementById("amount3").innerHTML="$"+totalcost+".00";
             }
+            if(count==null)
+            {
+            document.getElementById("item1").textContent=Productname1+" * 1";
+            document.getElementById("amount1").innerHTML="$"+cost+".00";
+            document.getElementById("amount3").innerHTML="$"+cost+".00";
+            }
         </script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>   
     </body>   
