@@ -82,7 +82,8 @@ box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);">
       {
         let name=document.getElementById("name").value;
         let productname=name.trim();
-        let detail=document.getElementById("description").value;
+        let det=document.getElementById("description").value;
+        let deetail=det.trim();
         let cost=document.getElementById("cost").value;
         let productimage=document.getElementById("productimage").value;
         localStorage.setItem("Productimage",JSON.stringify(productimage))
@@ -103,7 +104,7 @@ box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);">
       }
       else
       {
-          document.getElementById("productnameerror1").textContent="Plese select image file"
+          document.getElementById("productnameerror1").textContent="Product Name is required"
       }
       if(detail)
       {
