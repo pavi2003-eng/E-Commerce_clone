@@ -124,8 +124,8 @@ box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);">
       if(!cost)
       {
         document.getElementById("costerror").textContent="cost is required"
-      }
-      if(productname && cost && detail && imagevalidate=="true")
+      }      
+      if(productname.length>3 && cost && detail.length>11 && imagevalidate=="true")
       {
         console.log(productname,cost,detail,imagevalidate);
         window.location.href="producdtail.html";
