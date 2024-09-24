@@ -92,7 +92,7 @@
     <script>
       function validate()
       {
-        window.location.href="orderdetail.html";
+        window.location.replace("orderdetail.html");
       }
       let image=localStorage.getItem("imagesource");
       document.getElementById("image").textContent=image;
@@ -172,7 +172,6 @@
           document.getElementById("couponerror1").textContent="Invalid coupon code";
         }
       }
-
       }
     </script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>      
